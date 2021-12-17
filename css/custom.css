@@ -1,18 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@font-face {
+  font-family: Clip;
+  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+}
+.root {
+  --bs-primary: #ff9999 !important;
+}
 
-@import url(https://fonts.googleapis.com/css?family=Khula:700);
 
+
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+    color: #FFFFFF !important;
+    background: #ff2483 ;
+}
+
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:active,
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus,
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+    color: #FFFFFF !important;
+    background: #990073 !important;
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #1abc9c;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+a:hover {
+    color: black !important;
+
+}
 .hidden {
   opacity:0;
 }
 .fixed-height {
-  height: 10em;
+  height: 40em;
   position: relative;
 }
 .console-container {
   font-family:Khula;
   font-size:4em;
   text-align:center;
-  color:white;
+  color: white;
 }
 .console-underscore {
   position: absolute;
@@ -22,10 +52,207 @@
 
 .bg-primary {
     --bs-bg-opacity: 1;
-    background-color: rgb(245, 198, 188) !important;
+    background-color: #EFCED9 !important;
 }
 
 .bg-secondary {
     --bs-bg-opacity: 1;
-    background-color: rgb(241, 145, 155) !important;
+      background-color: #F3A6AD !important;
+}
+
+body {
+    background-color: #EEEEF0;
+    font: Roboto Mono;
+}
+
+
+.sign {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
+  left: 8%;
+  top: 50%;
+  font-family: "Clip";
+  text-transform: uppercase;
+  font-size: 3em;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  animation: shine 2s forwards, flicker 3s infinite;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s <2>;
+}
+
+
+
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+}
+
+
+
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  40%, 60% { transform: translate3d(0, 50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+.animated-title {
+  color: black;
+  font-family: Roboto;
+  height: 100vmin;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120vmin;
+  font-weight: 500;
+}
+
+.animated-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 80%;
+}
+.animated-title > div div {
+  font-size: 8vmin;
+  padding: 1vmin 0;
+  position: absolute;
+}
+.animated-title > div div span {
+  display:contents;
+}
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid #FFFFFF;
+  top: 0;
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+.animated-title > div.text-top div span:first-child {
+  color: black;
+}
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 0.5s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
+
+.portfolio .portfolio-item .portfolio-item-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+        transition-property: all;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+    opacity: 0;
+    background-color: rgb(255, 230, 230, 0.7);
+}
+.btn-primary {
+    color: #fff;
+    background-color: #F3A6AD;
+    border-color: #F3A6AD;
+}
+.btn-primary:hover {
+  background-color: #ff2483;
+  border-color: #ff2483;
+}
+.text-secondary {
+    --bs-text-opacity: 1;
+    color: rgb(243, 166, 173) !important;
+}
+
+.btn-primary:disabled, .btn-primary.disabled {
+    color: #fff;
+    background-color: #F3A6AD;
+    border-color: #F3A6AD;
+}
+
+
+
+.footer {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #F3A6AD;
+    color: #fff;
 }

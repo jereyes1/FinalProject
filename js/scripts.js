@@ -54,8 +54,11 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 
+
+
+/*
 // function([string1, string2],target id,[color1,color2])
- consoleText(['Hello World.', 'My name is Jenn.', 'This is my portfolio.'], 'text',['tomato','white','purple']);
+ consoleText(['Hello World.', "I'm Jenn.", 'A  developer.'], 'text',['#F1919B','#F1919B','#F1919B']);
 
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
@@ -105,3 +108,4 @@ function consoleText(words, id, colors) {
     }
   }, 400)
 }
+*/
